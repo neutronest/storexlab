@@ -28,3 +28,4 @@ replay_pid*
 
 # Deploy folder
 storex/target
+*.bin
