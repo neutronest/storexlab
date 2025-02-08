@@ -37,7 +37,9 @@ jobs:
             mvn -U package
 
       - name: Run tests
-        run: mvn test
+        run: |
+            cd ./storex
+            mvn test
 
   release:
     needs: build
