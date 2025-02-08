@@ -3,6 +3,7 @@ package storex.memtable;
 import org.junit.Test;
 import storex.memtable.NaiveSkipList;
 import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 public class NaiveSkipListTest {
 
@@ -34,5 +35,12 @@ public class NaiveSkipListTest {
         skipList.put("key3", "value3");
         skipList.delete("key2");
         assertEquals(skipList.size(), 2);
+    }
+
+    @Test
+    public void testDeleteNonExistDataDoNotThrowException()
+    {
+        NaiveSkipList skipList = new NaiveSkipList();
+        assertDoesNotThrow(() -> skipList.delete("invalid"));
     }
 }
