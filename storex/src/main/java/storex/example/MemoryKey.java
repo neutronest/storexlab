@@ -1,6 +1,6 @@
 package storex.example;
 
-import storex.core.IKey;
+import storex.hashindex.IKey;
 
 /**
  * @author neutr

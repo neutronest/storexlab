@@ -1,4 +1,5 @@
-package storex.core;
+package storex.hashindex;
+
 
 /**
  * @author neutr
