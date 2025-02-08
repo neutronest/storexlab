@@ -1,4 +1,4 @@
-package memtable;
+package storex.memtable;
 
 import org.junit.Test;
 import storex.memtable.NaiveSkipList;
@@ -23,5 +23,16 @@ public class NaiveSkipListTest {
 
         skipList.delete("key1");
         assertFalse(skipList.containsKey("key1"));
+    }
+
+    @Test
+    public void testGetListSizeSucessfully()
+    {
+        NaiveSkipList skipList = new NaiveSkipList();
+        skipList.put("key1", "value1");
+        skipList.put("key2", "value2");
+        skipList.put("key3", "value3");
+        skipList.delete("key2");
+        assertEquals(skipList.size(), 2);
     }
 }

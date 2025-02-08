@@ -2,16 +2,18 @@ package storex.memtable;
 
 import storex.exceptions.NotImplementedException;
 
+import java.util.concurrent.ConcurrentSkipListMap;
+
 public class NaiveSkipList implements ISkipList {
 
-    // private final ConcurrentSkipListMap<String, String> map = new ConcurrentSkipListMap<>();
+    private final ConcurrentSkipListMap<String, String> skipListMap = new ConcurrentSkipListMap<>();
     /**
      * @param key
      * @param value
      */
     @Override
     public void put(String key, String value) {
-        throw new NotImplementedException();
+        skipListMap.put(key, value);
     }
 
     /**
@@ -20,7 +22,7 @@ public class NaiveSkipList implements ISkipList {
      */
     @Override
     public String get(String key) {
-        throw new NotImplementedException();
+        return skipListMap.get(key);
     }
 
     /**
@@ -28,7 +30,7 @@ public class NaiveSkipList implements ISkipList {
      */
     @Override
     public void delete(String key) {
-        throw new NotImplementedException();
+        skipListMap.remove(key);
     }
 
     /**
@@ -37,7 +39,7 @@ public class NaiveSkipList implements ISkipList {
      */
     @Override
     public boolean containsKey(String key) {
-        throw new NotImplementedException();
+        return skipListMap.containsKey(key);
     }
 
     /**
@@ -45,6 +47,6 @@ public class NaiveSkipList implements ISkipList {
      */
     @Override
     public int size() {
-        throw new NotImplementedException();
+        return skipListMap.size();
     }
 }
